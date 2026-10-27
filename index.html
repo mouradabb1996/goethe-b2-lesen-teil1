@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#198754">
+<meta name="description" content="Interaktives Training für Goethe B2 Lesen Teil 1.">
+<title>Teil 1 lesen Goethe B2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#198754;--green-dark:#146c43;--green-soft:#e8f5ee;--bg:#f7f9f8;--ink:#212529;--muted:#66716b;--line:#e1e8e4;--red:#b42318;--red-bg:#fff0ef;--yellow:#8a6500;--yellow-bg:#fff7d6;--shadow:0 5px 18px #193b2b0b}
+[data-theme="dark"]{--green:#42b883;--green-dark:#7bd6a8;--green-soft:#173c2b;--bg:#111714;--ink:#edf4ef;--muted:#a5b4ab;--line:#2c3931;--red:#ff8c84;--red-bg:#3a211f;--yellow:#f1d36a;--yellow-bg:#3a3218;--shadow:0 5px 18px #00000025}
+[data-theme="dark"] .topbar,[data-theme="dark"] .topic-card,[data-theme="dark"] .person-card,[data-theme="dark"] .question,[data-theme="dark"] .results-card,[data-theme="dark"] .history-item,[data-theme="dark"] .empty{background:#19211c;border-color:var(--line);color:var(--ink)}
+[data-theme="dark"] .topic-card p,[data-theme="dark"] .description,[data-theme="dark"] .subtle,[data-theme="dark"] .footer{color:var(--muted)}
+[data-theme="dark"] .question select{background:#111714;color:var(--ink);border-color:#456b55}
+[data-theme="dark"] .qnum{background:#26332b;color:#dce9e0}
+[data-theme="dark"] .btn-secondary{background:#19211c;color:#9fe3bc;border-color:#456b55}
+[data-theme="dark"] .btn-quiet{color:var(--muted);border-color:var(--line)}
+[data-theme="dark"] .notice{background:#3a3218;color:#f1d36a}
+[data-theme="dark"] .question.correct{background:#173c2b;border-color:#327a54}
+[data-theme="dark"] .question.wrong{background:#3a211f;border-color:#87423d}
+[data-theme="dark"] .question.review{background:#3a3218;border-color:#806d2a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}button,select{font:inherit}button{cursor:pointer}.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{max-width:1160px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:11px;font-weight:800}.brand-icon{display:grid;place-items:center;background:var(--green-soft);color:var(--green);width:38px;height:38px;border-radius:12px;font-size:21px}.brand{letter-spacing:-.35px}.theme-toggle{padding:8px 11px;min-height:38px;font-size:12px;white-space:nowrap}.nav-right{margin-left:auto;font-size:12px;color:var(--muted);font-weight:600}.wrap{max-width:1160px;margin:auto;padding:34px 20px 60px}.hero{padding:20px 0 26px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.hero h1{font-size:clamp(28px,4vw,43px);letter-spacing:-1.3px;line-height:1.13;margin:9px 0 13px}.hero p{color:var(--muted);max-width:700px;margin:0;font-size:16px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:20px 0 16px}.section-head h2{margin:0;font-size:22px;letter-spacing:-.5px}.subtle{font-size:13px;color:var(--muted)}.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.topic-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;text-align:left;box-shadow:var(--shadow);transition:transform .16s,border-color .16s,box-shadow .16s;min-height:168px;color:inherit}.topic-card:hover{transform:translateY(-3px);border-color:#9acbb0;box-shadow:0 10px 26px #193b2b12}.topic-top{display:flex;align-items:center;justify-content:space-between}.topic-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:var(--green-soft);font-size:22px}.topic-number{font-size:12px;color:var(--muted);font-weight:700}.topic-card h3{font-size:18px;margin:17px 0 5px}.topic-card p{margin:0;color:var(--muted);font-size:13px}.btn{border-radius:11px;border:1px solid transparent;padding:11px 16px;font-weight:700;min-height:44px;transition:background .15s,transform .15s}.btn:active{transform:scale(.98)}.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark)}.btn-secondary{background:#fff;color:var(--green-dark);border-color:#9bc9ae}.btn-secondary:hover{background:var(--green-soft)}.btn-quiet{background:transparent;color:var(--muted);border-color:var(--line)}.button-row{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.backlink{border:0;background:none;padding:0;color:var(--green-dark);font-weight:700;margin-bottom:18px}.test-title-row{display:flex;align-items:start;justify-content:space-between;gap:16px;flex-wrap:wrap}.test-title-row h1{font-size:clamp(25px,3vw,34px);margin:0 0 5px;letter-spacing:-.8px}.progress-wrap{margin:22px 0 25px}.progress-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:8px}.progress{height:8px;background:#e5ece8;border-radius:20px;overflow:hidden}.progress-bar{height:100%;background:var(--green);width:0;transition:width .2s}.section-label{font-size:15px;font-weight:800;margin:25px 0 12px}.people-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.person-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;min-width:0}.letter{display:inline-grid;place-items:center;width:33px;height:33px;border-radius:10px;background:var(--green-soft);color:var(--green-dark);font-size:16px;font-weight:800;margin-bottom:9px}.keywords{font-size:14px;font-weight:700;margin-bottom:8px}.description{font-size:12px;color:var(--muted);margin:0}.questions{display:grid;gap:10px}.question{display:grid;grid-template-columns:44px minmax(0,1fr) 150px;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 15px;transition:border-color .15s,background .15s}.qnum{width:34px;height:34px;display:grid;place-items:center;background:#f0f4f2;border-radius:10px;font-weight:800;color:#48534d}.qtext{font-size:14px;font-weight:600;overflow-wrap:anywhere}.question select{width:100%;border:1px solid #a7cdb5;background:#fff;border-radius:10px;padding:10px 12px;min-height:44px;color:var(--ink);outline:none}.question select:focus{border-color:var(--green);box-shadow:0 0 0 3px #1987541b}.question.correct{background:var(--green-soft);border-color:#9bd1b1}.question.wrong{background:var(--red-bg);border-color:#f0aaa5}.question.review{background:var(--yellow-bg);border-color:#ead68b}.feedback{grid-column:2/-1;font-size:12px;font-weight:700;margin-top:-3px}.correct .feedback{color:var(--green-dark)}.wrong .feedback{color:var(--red)}.review .feedback{color:var(--yellow)}.results-card{display:grid;grid-template-columns:1.25fr repeat(3,1fr);gap:10px;background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px;margin:18px 0 20px;box-shadow:var(--shadow)}.score-main{padding:4px 10px}.score-main strong{display:block;font-size:30px;letter-spacing:-1px;color:var(--green)}.score-main span,.stat span{font-size:12px;color:var(--muted)}.stat{border-left:1px solid var(--line);padding:8px 14px}.stat strong{display:block;font-size:23px}.stat.good strong{color:var(--green)}.stat.bad strong{color:var(--red)}.stat.reviewstat strong{color:var(--yellow)}.notice{border-radius:12px;background:#fff7d6;color:#705300;padding:12px 14px;font-size:13px;margin:14px 0}.history{margin-top:36px}.history-list{display:grid;gap:8px}.history-item{display:flex;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:13px}.empty{font-size:13px;color:var(--muted);padding:15px;background:#fff;border:1px dashed var(--line);border-radius:12px}.creator-credit{margin-top:12px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.15px}.creator-credit a{color:var(--green);font-weight:800;text-decoration:none}.creator-credit a:hover{text-decoration:underline}.footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:12px;margin-top:38px}
+@media(max-width:850px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.results-card{grid-template-columns:repeat(3,1fr)}.score-main{grid-column:1/-1;border-bottom:1px solid var(--line);padding-bottom:12px}.stat{border-left:0;padding:5px 8px}}
+@media(max-width:560px){.wrap{padding:23px 14px 40px}.nav{padding:11px 14px}.nav-right{display:none}.theme-toggle{margin-left:auto;padding:7px 9px}.theme-toggle span{display:none}.topic-grid{grid-template-columns:1fr;gap:11px}.topic-card{min-height:0;padding:17px}.topic-card h3{margin-top:12px}.people-grid{grid-template-columns:1fr 1fr;gap:9px}.person-card{padding:12px}.keywords{font-size:13px}.description{font-size:11px}.question{grid-template-columns:35px minmax(0,1fr);gap:9px;padding:12px}.question select{grid-column:2;max-width:190px}.feedback{grid-column:2}.qtext{font-size:13px}.results-card{padding:13px;gap:4px}.stat{padding:5px 3px}.stat strong{font-size:20px}.stat span{font-size:11px}.button-row .btn{flex:1}.test-title-row .subtle{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="nav"><div class="brand-icon" aria-hidden="true">▤</div><div class="brand">Teil 1 lesen Goethe B2</div><button class="btn btn-secondary theme-toggle" id="themeToggle" type="button" aria-label="Dark Mode aktivieren" title="Dark Mode">☾ <span id="themeLabel">Dark Mode</span></button><div class="nav-right">LERNEN · ÜBEN · VERBESSERN</div></div></header>
+<main class="wrap">
+<section id="home">
+  <div class="hero"><div class="eyebrow">Deutschprüfung · Niveau B2</div><h1>Goethe B2 – Lesen Teil 1</h1><p>Trainiere das Zuordnen von Aussagen zu Personen. Wähle das passende Kürzel, korrigiere deine Antworten und verfolge deinen Lernfortschritt.</p></div>
+  <div class="section-head"><h2>Wähle ein Thema</h2><span class="subtle">6 Übungsthemen · ohne Anmeldung</span></div>
+  <div id="topicGrid" class="topic-grid"></div>
+  <section class="history"><div class="section-head"><h2>Dein Lernverlauf</h2><button class="btn btn-quiet" id="clearHistory">Verlauf löschen</button></div><div id="historyList" class="history-list"></div></section>
+</section>
+<section id="test" class="hidden">
+  <button class="backlink" id="backHome">← Zurück zu den Themen</button>
+  <div class="test-title-row"><div><div class="eyebrow" id="topicEyebrow">THEMA 1</div><h1 id="testTitle"></h1><div class="subtle" id="testSub"></div></div><div class="subtle" id="questionCount"></div></div>
+  <div class="progress-wrap"><div class="progress-meta"><span>Bearbeitungsfortschritt</span><span id="progressText">0 %</span></div><div class="progress"><div class="progress-bar" id="progressBar"></div></div></div>
+  <div id="results" class="hidden"></div>
+  <div class="section-label">Personen und Schlüsselwörter</div>
+  <div id="peopleGrid" class="people-grid"></div>
+  <div class="section-label">Aussagen zuordnen</div>
+  <div class="subtle" style="margin:-5px 0 12px">Wähle für jede Aussage ein Kürzel. Du kannst deine Auswahl jederzeit ändern.</div>
+  <div id="questions" class="questions"></div>
+  <div id="uncertainNotice" class="notice hidden">Einige Lösungen sind anhand der bereitgestellten Kurzbeschreibungen nicht eindeutig belegt. Diese Aussagen werden als „Überprüfung nötig“ gewertet und nicht als richtig oder falsch gezählt.</div>
+  <div class="button-row" style="margin-top:22px"><button class="btn btn-primary" id="correctBtn">Korrigieren</button><button class="btn btn-secondary" id="newTestBtn">Neuer Test</button><button class="btn btn-quiet" id="retryBtn" style="display:none">Noch einmal versuchen</button></div>
+</section>
+<footer class="footer">Lernhilfe für Goethe B2 Lesen Teil 1. Die bereitgestellten deutschen Formulierungen wurden bewusst unverändert übernommen. Unklare Lösungsschlüssel werden nicht geraten.<div class="creator-credit">Designed and developed by <a href="https://github.com/" target="_blank" rel="noopener noreferrer">@Mourad.abb</a></div></footer>
+</main>
+<script>
+const topics = [
+{title:"Geld sparen",subtitle:"Das Liebe Geld",icon:"€",people:[
+{letter:"a",keywords:"Kinder in Entwicklungsländern / seine Frau ist schwanger",description:"Hat früher Geld eher für Vergnügen ausgegeben. Erwartet ein Kind und denkt nun stärker an Zukunft und Sparen."},
+{letter:"b",keywords:"Teuere Autos wie Ferrari und BMW",description:"Hat Kinder und kennt die Bedeutung von Geld. Möchte Kindern Sparen beibringen, mag Luxus und keine hohen Preise."},
+{letter:"c",keywords:"Ziel oder Zweck / Wohnungs Einkaufen",description:"Möchte für konkrete Ziele wie den Wohnungskauf sparen und sucht finanzielle Beratung."},
+{letter:"d",keywords:"Hilft seiner Großmutter bei wohltängweiten",description:"Hilft der Großmutter bei wohltätigen Aktivitäten, lehnt Sparen aber eher ab und findet Ausgeben notwendig."}
+],questions:[
+["Wer findet Geldanlage Risikant?","a"],["Wer gibt sein Geld nicht mehr aus, um auszugeben (Wer spart Einkommen Kosten für Ausgeben (Geburt)?","a"],["Wer will Kindern Geldsparen beibringen (Kinder sparen Mütter)?","b"],["Wer ist gegen hohe Preisen (Stören über höher Preise)?","b"],["Wer möchte etwas Luxus?","b"],["Wer profitiert von professionelle Beratung in Finanz Und Wirtschaftsangelegenheiten (Finanziellen Beraten)?","c"],["Wer spart Geld für bestimmte Zwecke (Konkrete ziel)?","c"],["Wer lehnt geld sparen ab?","d"],["Wer verliert die Möglichkeit, Geld zu sparen. (Fehlt möglichkeit zu sparen)","d"]
+]},
+{title:"Beruf Wechsel",subtitle:"komplette Neustart",icon:"↗",people:[
+{letter:"a",keywords:"Versicherungsfirma / lokführer / zugfahrer",description:"Arbeitete bei einer Versicherung und wurde Zugfahrer. Arbeitet nachts und sucht neue Motivation."},
+{letter:"b",keywords:"400 Euro + Hochzeitsplannungsplanungs unternehmen",description:"Baute nach einer Bürotätigkeit ein Unternehmen für Hochzeitsplanung auf. Arbeitet abends und am Wochenende und ist stolz auf den Erfolg."},
+{letter:"c",keywords:"Bier trinken als Hobby",description:"Machte aus dem Interesse an der Herstellung von Wein ein eigenes Geschäft und freut sich über zufriedene Kundschaft."},
+{letter:"d",keywords:"Kündenberater Agent / callcenter / kommunikation",description:"Wechselte innerhalb eines ähnlichen Kommunikationsbereichs; die berufliche Veränderung war relativ gering. Möchte eine Familie gründen."}
+],questions:[
+["Wer wünscht sich eine Sichere Lebensgrundlage?","a"],["Wer Schätzt seine Arbeitskollegen?","a"],["Wer Arbeitet Heute längerer als früher?","b"],["Wer Arbeitet meist am Abend und Wochenende?","b"],["Wer ist stolz auf das erreicht?","b"],["Wer machte sein Hobby zum Beruf?","c"],["Wer freut sich über zufriedene Kunden?","c"],["Wer möchte eine Familie gründen?","d"],["Wessen Veränderung war relativ gering?","d"]
+]},
+{title:"Auszeit",subtitle:"Ein Pause vom Job",icon:"☀",people:[
+{letter:"a",keywords:"Ein Spanischkurs im Ausland / Reis nach Südamerika",description:"Nahm sechs Monate frei, um Spanisch in Südamerika zu lernen. Die berufliche Zukunft war wichtig; es gab Probleme mit Kollegen."},
+{letter:"b",keywords:"Arbeit 4 Jahre als IT-Berater",description:"Arbeitet in der IT, reist gern und jobbt gelegentlich während der Auszeit. Entdeckt neue Seiten an sich."},
+{letter:"c",keywords:"Buchhalterin – Kraankschwester – Pflege Studieren",description:"War lange berufstätig und erschöpft. Nahm eine längere Auszeit, engagierte sich medizinisch und hatte familiäre Schwierigkeiten."},
+{letter:"d",keywords:"Ein Jahr Urlaub bekommen",description:"Bekam nach einem Konflikt mit dem Arbeitgeber ein Jahr Auszeit und plant eine weitere."}
+],questions:[
+["Wer ließ sich professionell beraten.","a"],["Für wen stand die berufliche Zukunft im Vordergrund.","a"],["Wer hatte Probleme mit Kollegen.","a"],["Wer jobbte ab und zu während der Auszeit?","b"],["Wer lernt neue seiten von sich kennen?","b"],["Wer denkt nach der Rückkehr an einen Berufswechsel?","c"],["Für wen gab es Familie Schwierigkeiten?","c"],["Wessen Arbeitgeber Stelle sich gegen eine Auszeit?","d"],["Wer plant eine weitere Auszeit?","d"]
+]},
+{title:"Beruf",subtitle:"Arbeitzufridenheit / zufriedenheit im job",icon:"▣",people:[
+{letter:"a",keywords:"Ich habe seit zwei jahren als Bankkaufmann gearbeitet",description:"War als Bankangestellter trotz guten Einkommens unglücklich und eröffnete ein eigenes Restaurant."},
+{letter:"b",keywords:"Programmerin / Informatiksstudium",description:"Hat unregelmäßige Arbeitszeiten, lehnt eine eigene Firma ab und möchte nicht an feste Arbeitszeiten gebunden sein."},
+{letter:"c",keywords:"Meine Eltern sind beide Angestellte",description:"Schätzt Freiheit und Selbstbestimmung; Geld ist nicht das Wichtigste im Leben."},
+{letter:"d",keywords:"Heute bin ich fest Jounalist",description:"Ist Journalist und mag die Arbeit. Hatte seit dem Studium einen Plan für eine eigene Firma, ließ sich aber davon abbringen."}
+],questions:[
+["Wer war in seinem früheren Job unglücklich?","a"],["Wer wurde von seinem früheren Arbeitgeber entlassen?","a"],["Wer hat eine Geschäftsidee für seine zukünftige Selbstständigkeit?","a"],["Wer lehnt die gründung eigene Firma ab?","b"],["Wer bevorzugt regelmäßige Arbeitszeiten?","b"],["Wer schätzt Entscheidungs Freiheit?","c"],["Wer ist Geld nicht so wichtig?","c"],["Für wen spielt die Freude in der Arbeit eine große Rolle?","d"],["Wem wurden seine Würde und sein ursprünglicher Plan ausgeredet?","d"]
+]},
+{title:"Sammlung als Hobby",subtitle:"Sammeln und Freizeit",icon:"◈",people:[
+{letter:"a",keywords:"Flohmarkt",description:"Sammelt Uhren. Suchte zuerst in günstigen Geschäften und auf Flohmärkten, später auch online. Ein Freund teilte das Hobby."},
+{letter:"b",keywords:"Hulk und Batman",description:"Sammelt Spielkarten, darunter seit Kurzem Hulk- und Batman-Karten. Der Bruder teilt das Hobby und verändert Karten auf Wunsch kreativ."},
+{letter:"c",keywords:"Spiegel Sammlung",description:"Sammelt Spiegel, angeregt durch Medien oder das Internet. Die Sammlung nimmt viel Platz ein; sie möchte bald aufhören."},
+{letter:"d",keywords:"Fußball / Promi - unterschriften",description:"Sammelt Autogramme berühmter Fußballspieler auf Trikots und präsentiert die Sammlung online."}
+],questions:[
+["Wer Sucht oft im Internet nach gute Angebot?","a"],["Wer hat einen Freund mit dem gleichen Hobby?","a"],["Wer hat ein Familienmitglied mit dem gleichen Hobby?","b"],["Wer sammelt seit kurzem etwas Neues?","b"],["Wer bearbeitet die einzelnen Sammlungsstücke kreativ?","b"],["Wer hat die Idee für sein Hobby aus den Medien?","c"],["Wer möchte bald Mit dem Sammeln aufhören?","c"],["Wer stellt sammlung aktivität auch im Netz?","d"],["Wer kommt durch sein Hobby mit prominenter in Kontakt?","d"]
+]},
+{title:"Traumreise / Urlaub",subtitle:"Reisen",icon:"✈",people:[
+{letter:"a",keywords:"Reisen nach Afrika / Löwe ist schwach",description:"Reiste wegen Tierdokumentationen nach Afrika und war enttäuscht, weil die Löwen vor Ort schwach und mager wirkten."},
+{letter:"b",keywords:"Fahre das Familienauto irgendwohin",description:"Interessierte sich seit der Kindheit fürs Reisen und ist heute mit einem Wohnmobil unterwegs; das Erlebnis gefällt sehr."},
+{letter:"c",keywords:"Arbeit auf einem Schiff",description:"Liebt Reisen und sucht Arbeit auf einem Schiff, um Beruf und Interesse am Reisen zu verbinden."},
+{letter:"d",keywords:"nach Indien / Sehenswürdigkeiten in Indien",description:"Reiste auf Einladung einer Freundin indischer Herkunft nach Indien und verbrachte viel Zeit mit der Familie und Einheimischen."}
+],questions:[
+["Wer hat für die Traum Reise (bezahlt oder gespart)?","a"],["Wessen Erwartungen wurden zum Teil enttäuschen?","a"],["Wem waren Sendungen der Grund für den Reise wünsch?","a"],["Wer war im Wohnmobil unterwegs?","b"],["Wen hat das Erlebnis total überrascht?","b"],["Wer interessiert sich für Transportmittel sehr?","c"],["Für wen war die Reise mit der Arbeit verbunden?","c"],["Wem wurde die Reise geschenkt?","d"],["Wer war im Urlaub immer mit Einheimischen zusammen?","d"]
+]}
+];
+const $=id=>document.getElementById(id);
+let currentTopic=-1, currentQuestions=[], answers={}, corrected=false, attempt=0;
+const topicGrid=$("topicGrid");
+function renderHome(){
+ topicGrid.innerHTML="";
+ topics.forEach((t,i)=>{const b=document.createElement("button");b.className="topic-card";b.innerHTML=`<div class="topic-top"><span class="topic-icon">${t.icon}</span><span class="topic-number">THEMA ${i+1}</span></div><h3>${esc(t.title)}</h3><p>${esc(t.subtitle)} · ${t.questions.length} Aussagen</p>`;b.addEventListener("click",()=>startTopic(i));topicGrid.appendChild(b)});
+ renderHistory();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startTopic(i,confirmReset=false){
+ if(currentTopic===i && Object.values(answers).some(Boolean) && !confirmReset){if(!confirm("Deine Antworten gehen verloren. Möchtest du wirklich einen neuen Test starten?"))return}
+ currentTopic=i;attempt++;corrected=false;answers={};currentQuestions=shuffle(topics[i].questions.map((q,index)=>({id:index,text:q[0],key:q[1]})));
+ $("home").classList.add("hidden");$("test").classList.remove("hidden");$("results").classList.add("hidden");$("uncertainNotice").classList.add("hidden");$("retryBtn").style.display="none";$("correctBtn").style.display="inline-block";
+ $("topicEyebrow").textContent=`THEMA ${i+1}`;$("testTitle").textContent=topics[i].title;$("testSub").textContent=topics[i].subtitle;$("questionCount").textContent=`${currentQuestions.length} Aussagen`;
+ renderPeople();renderQuestions();updateProgress();window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderPeople(){const g=$("peopleGrid");g.innerHTML="";topics[currentTopic].people.forEach(p=>{const d=document.createElement("article");d.className="person-card";d.innerHTML=`<div class="letter">${p.letter}</div><div class="keywords">${esc(p.keywords)}</div><p class="description">${esc(p.description)}</p>`;g.appendChild(d)})}
+function renderQuestions(){
+ const root=$("questions");root.innerHTML="";
+ currentQuestions.forEach((q,index)=>{const d=document.createElement("article");d.className="question";d.id=`question-${q.id}`;
+ const num=document.createElement("div");num.className="qnum";num.textContent=index+1;
+ const text=document.createElement("div");text.className="qtext";text.textContent=q.text;
+ const select=document.createElement("select");select.setAttribute("aria-label",`Antwort für Aussage ${index+1}`);select.innerHTML='<option value="">— Bitte wählen —</option>'+["a","b","c","d"].map(x=>`<option value="${x}">${x}</option>`).join("");select.value=answers[q.id]||"";select.disabled=corrected;select.addEventListener("change",()=>{answers[q.id]=select.value;updateProgress()});
+ d.append(num,text,select);root.appendChild(d);
+ });
+}
+function updateProgress(){const n=Object.values(answers).filter(Boolean).length;const pct=Math.round(n/currentQuestions.length*100);$("progressText").textContent=`${pct} %`; $("progressBar").style.width=pct+"%"}
+function correctAnswers(){
+ if(corrected)return;corrected=true;
+ let right=0,wrong=0,review=0,blank=0;
+ currentQuestions.forEach((q,index)=>{const card=$(`question-${q.id}`);const selected=answers[q.id]||"";const select=card.querySelector("select");select.disabled=true;
+ const fb=document.createElement("div");fb.className="feedback";
+ if(q.key===null){review++;card.classList.add("review");fb.textContent=`⚠ Überprüfung nötig${selected?` · Deine Antwort: ${selected}`:" · Keine Antwort"}`;}
+ else if(selected===q.key){right++;card.classList.add("correct");fb.textContent=`✓ Richtig · Lösung: ${q.key}`;}
+ else {wrong++;if(!selected)blank++;card.classList.add("wrong");fb.textContent=`✕ Falsch${selected?` · Deine Antwort: ${selected}`:" · Nicht beantwortet"} · Lösung: ${q.key}`;}
+ card.appendChild(fb);
+ });
+ const score=`${right} / ${currentQuestions.length-review}`;
+ $("results").classList.remove("hidden");$("results").innerHTML=`<div class="results-card"><div class="score-main"><span>Dein Ergebnis</span><strong>${score}</strong><span>eindeutig bewertbare Aussagen</span></div><div class="stat good"><strong>${right}</strong><span>Richtig</span></div><div class="stat bad"><strong>${wrong}</strong><span>Falsch / leer</span></div><div class="stat reviewstat"><strong>${review}</strong><span>Überprüfung nötig</span></div></div>`;
+ $("uncertainNotice").classList.toggle("hidden",review===0);$("correctBtn").style.display="none";$("retryBtn").style.display="inline-block";
+ saveHistory({topic:topics[currentTopic].title,score:right,total:currentQuestions.length-review,review,when:new Date().toISOString()});
+ $("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function saveHistory(entry){try{const h=JSON.parse(localStorage.getItem("goetheB2History")||"[]");h.unshift(entry);localStorage.setItem("goetheB2History",JSON.stringify(h.slice(0,20)));}catch(e){}renderHistory()}
+function renderHistory(){const root=$("historyList");let h=[];try{h=JSON.parse(localStorage.getItem("goetheB2History")||"[]")}catch(e){}if(!h.length){root.innerHTML='<div class="empty">Noch keine Ergebnisse. Nach dem Korrigieren erscheinen deine letzten Versuche hier auf diesem Gerät.</div>';return}root.innerHTML=h.map(x=>`<div class="history-item"><div><strong>${esc(x.topic)}</strong><div class="subtle">${new Date(x.when).toLocaleString("de-DE")}</div></div><div><strong>${x.score}/${x.total}</strong><div class="subtle">${x.review} zur Überprüfung</div></div></div>`).join("")}
+$("correctBtn").addEventListener("click",correctAnswers);
+$("newTestBtn").addEventListener("click",()=>startTopic(currentTopic));
+$("retryBtn").addEventListener("click",()=>startTopic(currentTopic,true));
+$("backHome").addEventListener("click",()=>{$("test").classList.add("hidden");$("home").classList.remove("hidden");renderHome();window.scrollTo({top:0,behavior:"smooth"})});
+$("clearHistory").addEventListener("click",()=>{if(confirm("Möchtest du den lokalen Lernverlauf wirklich löschen?")){try{localStorage.removeItem("goetheB2History")}catch(e){}renderHistory()}});
+renderHome();
+function applyTheme(theme){
+ document.documentElement.dataset.theme=theme;
+ const dark=theme==="dark";
+ const btn=$("themeToggle"), label=$("themeLabel");
+ if(btn){btn.innerHTML=dark?'☀ <span id="themeLabel">Light Mode</span>':'☾ <span id="themeLabel">Dark Mode</span>';btn.setAttribute("aria-label",dark?"Light Mode aktivieren":"Dark Mode aktivieren");btn.title=dark?"Light Mode":"Dark Mode";}
+ try{localStorage.setItem("goetheB2Theme",theme)}catch(e){}
+}
+(function initTheme(){
+ let theme="light";try{theme=localStorage.getItem("goetheB2Theme")||"light"}catch(e){}
+ applyTheme(theme);
+})();
+$("themeToggle").addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"));
+</script>
+</body></html>
